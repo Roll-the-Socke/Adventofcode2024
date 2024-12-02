@@ -1,0 +1,22 @@
+frst = []
+snd = []
+final = 0
+
+
+
+with open("input.txt") as i:
+    input = i.read().split()
+    content = list(map(int, input))
+    for num in content[::2]:
+        frst.append(num)
+    for num in content[1::2]:
+        snd.append(num)
+
+    frst.sort()
+    snd.sort()
+
+
+    for a in range(len(frst)):
+        final += abs(frst[a] - snd[a])
+        
+    print (final)
